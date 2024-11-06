@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useCars } from "../context/CarsContext";
+import { useTheme } from "../context/ThemeContext";
+import styles from "./Modal.module.css";
 
 export const CreateCarModal = ({ closeModal }) => {
   const { addCar } = useCars();
+  const { darkMode } = useTheme();
   const [formData, setFormData] = useState({
     make: "",
     model: "",
@@ -32,18 +35,7 @@ export const CreateCarModal = ({ closeModal }) => {
   };
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        background: "white",
-        padding: "20px",
-        borderRadius: "5px",
-        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-      }}
-    >
+    <div className={`${styles.modal} ${darkMode ? styles.dark : styles.light}`}>
       <h2>Add New Car</h2>
       <form onSubmit={handleSubmit}>
         <label>
@@ -55,7 +47,6 @@ export const CreateCarModal = ({ closeModal }) => {
             onChange={handleChange}
           />
         </label>
-        <br />
         <label>
           Model:
           <input
@@ -65,11 +56,10 @@ export const CreateCarModal = ({ closeModal }) => {
             onChange={handleChange}
           />
         </label>
-        <br />
         <label>
           Year:
           <input
-            type="number"
+            type="text"
             name="year"
             value={formData.year}
             onChange={handleChange}
@@ -77,7 +67,7 @@ export const CreateCarModal = ({ closeModal }) => {
         </label>
         <br />
         <label>
-          🚗 Picture (emoji):
+          Picture:
           <input
             type="text"
             name="picture"
@@ -86,11 +76,12 @@ export const CreateCarModal = ({ closeModal }) => {
             placeholder="Enter an emoji (e.g., 🚕)"
           />
         </label>
-        <br />
-        <button type="submit">Add Car</button>
-        <button type="button" onClick={closeModal}>
-          Cancel
-        </button>
+        <div className={styles.buttonGroup}>
+          <button type="submit">Add Car</button>
+          <button type="button" onClick={closeModal}>
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
   );

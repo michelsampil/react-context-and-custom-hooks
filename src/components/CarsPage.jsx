@@ -12,7 +12,7 @@ export const CarsPage = () => {
   return (
     <div className={darkMode ? "dark-mode" : "light-mode"}>
       <button onClick={toggleTheme}>
-        {darkMode ? "Light Mode" : "Dark Mode"}
+        {darkMode ? "Light Mode ☀️" : "Dark Mode 🌙"}
       </button>
       <button onClick={toggleCreateModal}>Add Car</button>
       <CarList />

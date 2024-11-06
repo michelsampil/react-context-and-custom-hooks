@@ -1,9 +1,11 @@
-// src/components/EditCarModal.jsx
 import { useState } from "react";
 import { useCars } from "../context/CarsContext";
+import { useTheme } from "../context/ThemeContext";
+import styles from "./Modal.module.css";
 
 export const EditCarModal = ({ car, closeModal }) => {
   const { updateCar } = useCars();
+  const { darkMode } = useTheme(); // Assuming you have a theme context
   const [formData, setFormData] = useState({ ...car });
 
   const handleChange = (e) => {
@@ -16,7 +18,6 @@ export const EditCarModal = ({ car, closeModal }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const updatedCar = {
       id: car.id,
       make: formData.make,
@@ -30,18 +31,7 @@ export const EditCarModal = ({ car, closeModal }) => {
   };
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        background: "white",
-        padding: "20px",
-        borderRadius: "5px",
-        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-      }}
-    >
+    <div className={`${styles.modal} ${darkMode ? styles.dark : styles.light}`}>
       <h2>Edit Car</h2>
       <form onSubmit={handleSubmit}>
         <label>
@@ -53,7 +43,6 @@ export const EditCarModal = ({ car, closeModal }) => {
             onChange={handleChange}
           />
         </label>
-        <br />
         <label>
           Model:
           <input
@@ -63,21 +52,21 @@ export const EditCarModal = ({ car, closeModal }) => {
             onChange={handleChange}
           />
         </label>
-        <br />
         <label>
           Year:
           <input
-            type="number"
+            type="text"
             name="year"
             value={formData.year}
             onChange={handleChange}
           />
         </label>
-        <br />
-        <button type="submit">Save</button>
-        <button type="button" onClick={closeModal}>
-          Cancel
-        </button>
+        <div className={styles.buttonGroup}>
+          <button type="submit">Save</button>
+          <button type="button" onClick={closeModal}>
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
   );
