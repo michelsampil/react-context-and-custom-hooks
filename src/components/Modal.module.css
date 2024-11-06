@@ -1,0 +1,23 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 60vw;
+  height: 60vh;
+  padding: 2rem;
+  max-width: 90%;
+  transition: background-color 0.2s;
+}
+
+.light {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.dark {
+  background-color: #333;
+  color: #fff;
+}

@@ -1,0 +1,16 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.light {
+  background-color: #f9f9f9;
+}
+
+.dark {
+  background-color: #222;
+  color: #fff;
+}

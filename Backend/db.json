@@ -1,0 +1,67 @@
+{
+  "cars": [
+    {
+      "id": 2,
+      "make": "Honda",
+      "model": "Civic",
+      "year": "2020",
+      "picture": "🚙"
+    },
+    {
+      "id": 3,
+      "make": "Ford",
+      "model": "Mustang",
+      "year": "2022",
+      "picture": "🏎️"
+    },
+    {
+      "id": 4,
+      "make": "Tesla",
+      "model": "Model S",
+      "year": 2022,
+      "picture": "🚘"
+    },
+    {
+      "id": 5,
+      "make": "Chevrolet",
+      "model": "Camaro",
+      "year": 2018,
+      "picture": "🚕"
+    },
+    {
+      "id": 6,
+      "make": "BMW",
+      "model": "M3",
+      "year": 2023,
+      "picture": "🚓"
+    },
+    {
+      "id": 7,
+      "make": "Audi",
+      "model": "A4",
+      "year": 2021,
+      "picture": "🚖"
+    },
+    {
+      "id": 8,
+      "make": "Mercedes-Benz",
+      "model": "C-Class",
+      "year": 2020,
+      "picture": "🚍"
+    },
+    {
+      "id": 9,
+      "make": "Volkswagen",
+      "model": "Golf",
+      "year": 2019,
+      "picture": "🚔"
+    },
+    {
+      "id": 10,
+      "make": "Jeep",
+      "model": "Wrangler",
+      "year": 2022,
+      "picture": "🚜"
+    }
+  ]
+}
