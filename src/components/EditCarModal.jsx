@@ -5,7 +5,7 @@ import styles from "./Modal.module.css";
 
 export const EditCarModal = ({ car, closeModal }) => {
   const { updateCar } = useCars();
-  const { darkMode } = useTheme(); // Assuming you have a theme context
+  const { darkMode } = useTheme();
   const [formData, setFormData] = useState({ ...car });
 
   const handleChange = (e) => {
