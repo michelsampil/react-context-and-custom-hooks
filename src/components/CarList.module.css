@@ -1,0 +1,8 @@
+/* src/components/CarList.module.css */
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 20px;
+}
